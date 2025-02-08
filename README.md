@@ -15,3 +15,7 @@ During the early stages of development, it’s often more efficient to compile a
 # Git
 
 # Docker
+
+# Surprise! Networking
+https://www.robotsforroboticists.com/networking-robots-crash-course/
+
