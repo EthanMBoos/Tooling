@@ -10,11 +10,8 @@ The simplest way to create this environment is by using [VirtualBox’s GUI inst
 ### Development Workflow
 During the early stages of development, it’s often more efficient to compile and build your projects directly on the host machine (i.e., "bare metal"). This approach simplifies debugging and rapid iteration. Once your codebase stabilizes, you can package it into a Docker container for consistent builds, easier sharing, and smoother deployment in production environments. 
 
----
 # Linux
 
----
 # Git
 
----
 # Docker
