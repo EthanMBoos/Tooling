@@ -11,11 +11,21 @@ The simplest way to create this environment is by using [VirtualBox’s GUI inst
 During the early stages of development, it’s often more efficient to compile and build your projects directly on the host machine (i.e., "bare metal"). This approach simplifies debugging and rapid iteration. Once your codebase stabilizes, you can package it into a Docker container for consistent builds, easier sharing, and smoother deployment in production environments. 
 
 # Linux
-
-# Git
-
-# Docker
-
-# Surprise! Networking
+Linux OS structure
+Update & upgrade
+Learn vim
+Useful hotkeys
+### Surprise! Networking
 https://www.robotsforroboticists.com/networking-robots-crash-course/
-
+# Git
+Setup ssh keys and profile
+Create vs pull down repo.
+git submodules, init recursive
+If on a team with multiple submodules, regularly git fetch and git pull to development on most up to date code
+Branch naming conventions.
+Merging best practices,
+git rebase then git merge --ff-only removes unecessary merge commits and keep linear history
+# Docker
+Dockerfile explanation
+Initialization and push to registry
+Pull down from registry, build, and run
