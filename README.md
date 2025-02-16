@@ -33,7 +33,6 @@ cat ~/.ssh/id_ed25519.pub
 # Docker Install
 sudo apt install -y docker.io docker-compose
 sudo usermod -aG docker $USER  # Allow non-root use
-
 ```
 ### Networking Suprises!
 Networking is one of the unexpected challenges in robotics development. Robots require precise IP configurations, routing, and wireless setups. For a deeper conceptual dive, check out [Networking for Robots: A Crash Course](https://www.robotsforroboticists.com/networking-robots-crash-course/).
