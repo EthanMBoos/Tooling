@@ -54,6 +54,47 @@ ping <Ubuntu vm ip address>
 During the early stages of development, it’s often more efficient to compile and build your projects directly on the host machine (i.e., "bare metal"). This approach simplifies debugging and rapid iteration. Once your codebase stabilizes, you can package it into a Docker container for consistent builds, easier sharing, and smoother deployment in production environments. 
 
 Dockerfile explanation
-Include template
+
+Dockerfile template
+```
+# Use ROS Humble base image
+FROM ros:humble-ros-base
+
+# Define arguments for user creation
+ARG USERNAME=robotics-user
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create a non-root user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
+# Switch to the new user
+USER $USERNAME
+
+# Allow access to video devices (e.g., webcams)
+RUN sudo usermod --append --groups video $USERNAME
+
+# Update and install essential dependencies
+RUN sudo apt update && sudo apt upgrade -y && sudo apt install -y git
+
+# Initialize rosdep
+RUN rosdep update
+
+# Source ROS setup script on login
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
+
+# Set working directory
+WORKDIR /home/$USERNAME
+
+# Default command: start a bash shell
+CMD ["/bin/bash"]
+```
+
 Initialization and push to registry
+
 Pull down from registry, build, and run
