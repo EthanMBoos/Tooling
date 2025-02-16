@@ -6,7 +6,7 @@ Suppose you're starting a project that requires a specific operating system envi
 
 The simplest way to create a development environment is by using [VirtualBox](https://www.geeksforgeeks.org/how-to-install-virtualbox-on-windows/) to create a virtual machine on top of your current operating system. With VirtualBox, you can simulate the entire operating system, allowing your development environment to closely mirror the physical robot system where your code will eventually run.
 
-Once VirtualBox is installed, download your target system release from the [Ubuntu website](https://releases.ubuntu.com/jammy/), in VirtualBox follow the new VM install GUI interface instructions, and run the following commands,
+Once VirtualBox is installed on your host machine, download your target system release from the [Ubuntu website](https://releases.ubuntu.com/jammy/), in the VirtualBox GUI follow the new VM install instructions. Open the new VM and run the below commands,
 ```
 # System updates & remove unused packages
 sudo apt update && sudo apt upgrade -y
