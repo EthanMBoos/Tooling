@@ -10,22 +10,32 @@ The simplest way to create this environment is by using [VirtualBox’s GUI inst
 ### Development Workflow
 During the early stages of development, it’s often more efficient to compile and build your projects directly on the host machine (i.e., "bare metal"). This approach simplifies debugging and rapid iteration. Once your codebase stabilizes, you can package it into a Docker container for consistent builds, easier sharing, and smoother deployment in production environments. 
 
-# Linux
-Linux OS structure
-Update & upgrade
-Learn vim
-Useful hotkeys
-### Surprise! Networking
-https://www.robotsforroboticists.com/networking-robots-crash-course/
+# Linux - Surprise Networking!
+Networking is one of the unexpected challenges in robotics development. Robots require precise IP configurations, routing, and wireless setups. For a deeper conceptual dive, check out [Networking for Robots: A Crash Course](https://www.robotsforroboticists.com/networking-robots-crash-course/).
+
+[Key networking setup when using virtualbox](https://serverfault.com/questions/225155/virtualbox-how-to-set-up-networking-so-both-host-and-guest-can-access-internet).
+
+Key Commands:
+```
+# After your Virtualbox networking is setup, you should see your new network interface.
+ip a
+
+# From Virtualbox Ubuntu VM, check network connection to host machine.
+ping <host machine ip address>
+
+# From Host Machine, check network connection to Virtualbox Ubuntu VM.
+ping <Ubuntu vm ip address>
+```
+
 # Git
-Setup ssh keys and profile
-Create vs pull down repo.
 git submodules, init recursive
 If on a team with multiple submodules, regularly git fetch and git pull to development on most up to date code
 Branch naming conventions.
 Merging best practices,
 git rebase then git merge --ff-only removes unecessary merge commits and keep linear history
+
 # Docker
 Dockerfile explanation
+Include template
 Initialization and push to registry
 Pull down from registry, build, and run
