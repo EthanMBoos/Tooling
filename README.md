@@ -50,7 +50,7 @@ ping <host machine ip address>
 # From Host Machine, check network connection to VirtualBox Ubuntu VM.
 ping <Ubuntu vm ip address>
 ```
-## Package Your Dependencies In Docker
+## Package Dependencies In Docker
 During the early stages of development, it’s often more efficient to compile and build your projects directly on the host machine (i.e., "bare metal"). This approach simplifies debugging and rapid iteration. Once your codebase stabilizes, you can package it into a Docker container for consistent builds, easier sharing, and smoother deployment in production environments. 
 
 Dockerfile explanation
